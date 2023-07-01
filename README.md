@@ -2,7 +2,7 @@
 Official PyTorch implementation of paper "Variation-aware Vision Transformer Quantization"
 
 <div align=center>
-<img width=60% src="VVTQ.png"/>
+<img width=80% src="VVTQ.png"/>
 </div>
 
 ## Abstract
