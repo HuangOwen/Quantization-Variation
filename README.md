@@ -66,21 +66,20 @@ CUDA_VISIBLE_DEVICES=0 python train_VVTQ.py \
 
 | Model    | W bits | A bits | accuracy (Top-1) |weights  |logs |
 |:-------:|:--------:|:--------:|:--------:|:--------:|:--------:|
-| `DeiT-T` | 32 | 32|   73.75    |[link]() |  - |
+| `DeiT-T` | 32 | 32|   73.75    |[link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/xhuangbs_connect_ust_hk/EoJbm6qBXoRNpOZbvv-Z4u0BSKji09RPWfFhSVjZ4Swmag?e=M3vf0h) |  - |
 | `DeiT-T` | 4  | 4 | **74.71**  |[link]() |  [link](./log/DeiT-T-W4A4.log) |
 | `DeiT-T` | 3  | 3 | **71.22**  |[link]() |  [link](./log/DeiT-T-W3A3.log) |
 | `DeiT-T` | 2  | 2 | **59.73**  |[link]() |  [link](./log/DeiT-T-W2A2.log) |
 | | | | | | |
-| `SReT-T` | 32 | 32|   75.81    |[link]() |  - |
+| `SReT-T` | 32 | 32|   75.81    |[link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/xhuangbs_connect_ust_hk/EulNclRNYmtGiYOhn9KEGGIBZ90gNN_k6SQLhrzSP2UArA?e=0Tzhxx) |  - |
 | `SReT-T` | 4  | 4 | **76.99**  |[link]() |  [link](./log/SReT-T-W4A4.log) |
 | `SReT-T` | 3  | 3 | **75.40**  |[link]() |  [link](./log/SReT-T-W3A3.log) |
 | `SReT-T` | 2  | 2 | **67.53**  |[link]() |  [link](./log/SReT-T-W2A2.log) |
 | | | | | | |
-| `Swin-T` | 32 | 32|    81.0    |[link]() |  - |
-| `Swin-T` | 4  | 4 | **82.42**  |[link]() |  [link]() |
-| `Swin-T` | 3  | 3 | **81.37**  |[link]() |  [link]() |
-| `Swin-T` | 2  | 2 | **77.66**  |[link]() |  [link]() |
-
+| `Swin-T` | 32 | 32|    81.0    |[link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/xhuangbs_connect_ust_hk/Er1hvDL6lNNBjlJbiBDNZ3UB-liw32fjCZbUYodDLbYcDg?e=MAIMt8) |  - |
+| `Swin-T` | 4  | 4 | **82.42**  |[link]() |  [link](./log/Swin-T-W4A4.log) |
+| `Swin-T` | 3  | 3 | **81.37**  |[link]() |  [link](./log/Swin-T-W3A3.log) |
+| `Swin-T` | 2  | 2 | **77.66**  |[link]() |  [link](./log/Swin-T-W2A2.log) |
 
 ## Citation
 
