@@ -1,5 +1,5 @@
 # VVTQ
-Official PyTorch implementation of paper "Variation-aware Vision Transformer Quantization"
+Official PyTorch implementation of paper "Variation-aware Vision Transformer Quantization" [[Arxiv]](https://arxiv.org/abs/2307.00331)
 
 <div align=center>
 <img width=80% src="VVTQ.png"/>
@@ -87,7 +87,7 @@ CUDA_VISIBLE_DEVICES=0 python train_VVTQ.py \
 	      title={Variation-aware Vision Transformer Quantization}, 
 	      author={Xijie Huang, Zhiqiang Shen and Kwang-Ting Cheng},
 	      year={2023},
-	      journal={arXiv preprint arXiv:}
+	      journal={arXiv preprint arXiv:2307.00331}
 	}
 
 ## Contact
