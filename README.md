@@ -1,17 +1,10 @@
-# VVTQ
-Official PyTorch implementation of paper "Variation-aware Vision Transformer Quantization" [[Arxiv]](https://arxiv.org/abs/2307.00331)
+# Quantization Variation
+Official PyTorch implementation of the anonymous ACM MM Submission "Quantization Variation: A New Perspective on Training Transformers with Low-Bit Precision" 
 
 <div align=center>
-<img width=80% src="VVTQ.png"/>
+<img width=80% src="variation.png"/>
 </div>
 
-## Abstract
-
-To address the heavy computation and parameter drawbacks, quantization is frequently studied in the community as a representative model compression technique and has seen extensive use on CNNs. However, due to the unique properties of CNNs and ViTs, the quantization applications on ViTs are still limited and
-underexplored. In this paper, we identify the difficulty of ViT quantization on its unique **variation** behaviors, which differ from traditional CNN architectures. The variations indicate the magnitude of the parameter fluctuations and can also measure outlier conditions. Moreover, the variation behaviors reflect the various sensitivities to the quantization of each module. The quantization sensitivity analysis and comparison of ViTs with CNNs help us locate the underlying differences in variations. We also find that the variations in ViTs
-cause training oscillations, bringing instability during quantization-aware training (QAT).
-
-We solve the variation problem with an efficient knowledge-distillation-based variation-aware quantization method. The multi-crop knowledge distillation scheme can accelerate and stabilize the training and alleviate the variation’s influence during QAT. We also proposed a module-dependent quantization scheme and a variation-aware regularization term to suppress the oscillation of weights. On ImageNet-1K, we obtain a **77.66%** Top-1 accuracy on the low-bit scenario of 2-bit Swin-T, outperforming the previous state-of-the-art quantized model by **3.35%**. 
 
 ## Preparation
 
@@ -81,15 +74,4 @@ CUDA_VISIBLE_DEVICES=0 python train_VVTQ.py \
 | `Swin-T` | 3  | 3 | **81.37**  |[link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/xhuangbs_connect_ust_hk/EtfaRgHlLuxNss6w42yHf2kBTkIyskg9rsRlPvBlOsS1Pg?e=tGDdCB)  |  [link](./log/Swin-T-W3A3.log) |
 | `Swin-T` | 2  | 2 | **77.66**  |[link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/xhuangbs_connect_ust_hk/Eud-4deIkJ9Dvrls0GWES1IBhl9Ej2bBfUy-7wPA3cf1xQ?e=BoyWB4)  |  [link](./log/Swin-T-W2A2.log) |
 
-## Citation
 
-	@article{huang2023variation,
-	      title={Variation-aware Vision Transformer Quantization}, 
-	      author={Xijie Huang, Zhiqiang Shen and Kwang-Ting Cheng},
-	      year={2023},
-	      journal={arXiv preprint arXiv:2307.00331}
-	}
-
-## Contact
-
-Xijie HUANG (huangxijie1108 at gmail.com or xhuangbs at connect.ust.hk) 
