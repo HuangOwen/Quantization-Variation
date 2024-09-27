@@ -1,10 +1,28 @@
 # Quantization Variation
-Official PyTorch implementation of the anonymous ACM MM Submission "Quantization Variation: A New Perspective on Training Transformers with Low-Bit Precision" 
+
+This repository contains the codes for reproducing our work: "[Quantization Variation: A New Perspective on Training Transformers with Low-Bit Precision](https://openreview.net/forum?id=MHfoA0Qf6g)", published in Transactions on Machine Learning Research (TMLR). 
+
+
+## Abstract
+
+In this paper, we identify the difficulty of transformer low-bit quantization-aware training on its unique variation behaviors, which significantly differ from ConvNets. Based on comprehensive quantitative analysis, we observe variation in three hierarchies: various module quantization sensitivities, outliers in static weight and activation distribution, and oscillation in dynamic parameter fluctuations. These variations of transformers bring instability to the quantization-aware training (QAT) and negatively influence the performance. We explore the best practices to alleviate the variation's influence during low-bit transformer QAT and propose a variation-aware quantization scheme. We extensively verify and show our scheme can alleviate the variation and improve the performance of transformers across various models and tasks. Our solution substantially improves the 2-bit Swin-T, achieving a 3.35% accuracy improvement over previous state-of-the-art methods on ImageNet-1K.
 
 <div align=center>
 <img width=80% src="variation.png"/>
 </div>
 
+## Citation
+
+If you find our code useful for your research, please consider citing:
+
+	@article{
+        huang2024quantization,
+        title={Quantization Variation: A New Perspective on Training Transformers with Low-Bit Precision},
+        author={Xijie Huang, Zhiqiang Shen, Pingcheng Dong, Kwang-Ting Cheng},
+        journal={Transactions on Machine Learning Research},
+        year={2024},
+        url={https://openreview.net/forum?id=MHfoA0Qf6g}
+    }
 
 ## Preparation
 
@@ -55,5 +73,30 @@ CUDA_VISIBLE_DEVICES=0 python train_VVTQ.py \
 --data [imagenet-folder with train and val folders]
 ```
 
+## Models
+
+| Model    | W bits | A bits | accuracy (Top-1) |weights  |logs |
+|:-------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+| `DeiT-T` | 32 | 32|   73.75    |[link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/xhuangbs_connect_ust_hk/EoJbm6qBXoRNpOZbvv-Z4u0BSKji09RPWfFhSVjZ4Swmag?e=M3vf0h) |  - |
+| `DeiT-T` | 4  | 4 | **74.71**  |[link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/xhuangbs_connect_ust_hk/EmsOhPWW83tIqeB8_bHoJwkBHQIlgFyDs45WvQtBdZ80iA?e=zjSkXC)  |  [link](./log/DeiT-T-W4A4.log) |
+| `DeiT-T` | 3  | 3 | **71.22**  |[link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/xhuangbs_connect_ust_hk/El-PoCPkBLxJoIt1q5QAZPsBR6r03LtD6GT0E_JsEOa8UQ?e=jFaRmR)  |  [link](./log/DeiT-T-W3A3.log) |
+| `DeiT-T` | 2  | 2 | **59.73**  |[link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/xhuangbs_connect_ust_hk/EsFXkkBx5o5MmLmnOOBF5kgBrMvski1KK-tHhXG9pZdZOQ?e=2HCrSb)  |  [link](./log/DeiT-T-W2A2.log) |
+| | | | | | |
+| `SReT-T` | 32 | 32|   75.81    |[link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/xhuangbs_connect_ust_hk/EulNclRNYmtGiYOhn9KEGGIBZ90gNN_k6SQLhrzSP2UArA?e=0Tzhxx) |  - |
+| `SReT-T` | 4  | 4 | **76.99**  |[link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/xhuangbs_connect_ust_hk/EonJNVBF7E1EoLvFvg3ZZmwBhMedIfGzXApLOxn2mk5HyQ?e=rTrtki)  |  [link](./log/SReT-T-W4A4.log) |
+| `SReT-T` | 3  | 3 | **75.40**  |[link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/xhuangbs_connect_ust_hk/EjCW5BP4uI9EjcP3XxVb3cEBLUTpeEV4puhjnEKWkihY-A?e=KpdFOg)  |  [link](./log/SReT-T-W3A3.log) |
+| `SReT-T` | 2  | 2 | **67.53**  |[link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/xhuangbs_connect_ust_hk/Enp9pzS2Es1Oh0wuDZTVYTAB-PX4K8-cX58syW36muboPA?e=vhCa1H)  |  [link](./log/SReT-T-W2A2.log) |
+| | | | | | |
+| `Swin-T` | 32 | 32|    81.0    |[link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/xhuangbs_connect_ust_hk/Er1hvDL6lNNBjlJbiBDNZ3UB-liw32fjCZbUYodDLbYcDg?e=MAIMt8) |  - |
+| `Swin-T` | 4  | 4 | **82.42**  |[link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/xhuangbs_connect_ust_hk/EkKkcCGrejJHl8ENdydFk_EBashaw8UHbO9UhLcWSL9img?e=91aNWe)  |  [link](./log/Swin-T-W4A4.log) |
+| `Swin-T` | 3  | 3 | **81.37**  |[link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/xhuangbs_connect_ust_hk/EtfaRgHlLuxNss6w42yHf2kBTkIyskg9rsRlPvBlOsS1Pg?e=tGDdCB)  |  [link](./log/Swin-T-W3A3.log) |
+| `Swin-T` | 2  | 2 | **77.66**  |[link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/xhuangbs_connect_ust_hk/Eud-4deIkJ9Dvrls0GWES1IBhl9Ej2bBfUy-7wPA3cf1xQ?e=BoyWB4)  |  [link](./log/Swin-T-W2A2.log) |
+
+
+## Acknowledgement
+
+This repo benefits from [FKD](https://github.com/szq0214/FKD) and [LSQuantization](https://github.com/hustzxd/LSQuantization). Thanks for their wonderful works!
+
+If you have any questions, feel free to contact Xijie Huang (xhuangbs AT connect.ust.hk, huangxijie1108 AT gmail.com)
 
 
